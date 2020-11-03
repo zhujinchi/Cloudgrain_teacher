@@ -68,6 +68,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "dio",
+      "rootUri": "file:///Users/angzeng/flutter/.pub-cache/hosted/pub.flutter-io.cn/dio-3.0.10",
+      "packageUri": "lib/",
+      "languageVersion": "2.4"
+    },
+    {
       "name": "equatable",
       "rootUri": "file:///Users/angzeng/flutter/.pub-cache/hosted/pub.flutter-io.cn/equatable-1.2.5",
       "packageUri": "lib/",
@@ -398,7 +404,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-11-03T08:22:43.402806Z",
+  "generated": "2020-11-03T08:42:05.698718Z",
   "generator": "pub",
   "generatorVersion": "2.10.2"
 }

@@ -1,8 +1,11 @@
+import 'package:Cloudgrain_teacher/widgets/network/dio_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:Cloudgrain_teacher/widgets/widgets.dart';
 import 'package:Cloudgrain_teacher/screens/login/register_choose_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:Cloudgrain_teacher/widgets/network/net_api.dart';
+import 'package:dio/dio.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -25,6 +28,16 @@ class _LoginScreenState extends State<LoginScreen> {
   void _onLogin() {
     final form = _formKey.currentState;
     form.save();
+
+    // FormData params = FormData.fromMap({});
+
+    // DioManager.getInstance().get("https://www.baidu.com/", params, (result) {
+    //   print(result);
+    //   //请求成功需要做的事
+    // }, (error) {
+    //   print(error + '123');
+    //   //失败后需要做的事
+    // });
 
     // if (_userID == '') {
     //   _showMessageDialog('账号不可为空');

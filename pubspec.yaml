@@ -34,6 +34,7 @@ dependencies:
   flutter_screenutil: ^3.1.0
   flutter_custom_calendar: ^1.0.5
   keyboard_avoider: ^0.1.2
+  dio: ^3.0.10 #网络请求库
   
   #flutter_custom_calendar: ^1.0.4+0.5
   #camera: ^0.5.2+2
