@@ -13,7 +13,7 @@ class DioManager {
 
   Dio dio = Dio();
   DioManager() {
-    dio.options.baseUrl = "";
+    dio.options.baseUrl = "http://yundou.skyline.name:18001";
     dio.options.connectTimeout = 5000;
     dio.options.receiveTimeout = 3000;
     dio.interceptors.add(LogInterceptor(requestBody: true));

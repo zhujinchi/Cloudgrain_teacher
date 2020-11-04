@@ -29,15 +29,19 @@ class _LoginScreenState extends State<LoginScreen> {
     final form = _formKey.currentState;
     form.save();
 
-    // FormData params = FormData.fromMap({});
+    //网络请求
+    FormData params = FormData.fromMap({
+      'userName': 'XH6768768762',
+      'password': 'ad123&368',
+    });
 
-    // DioManager.getInstance().get("https://www.baidu.com/", params, (result) {
-    //   print(result);
-    //   //请求成功需要做的事
-    // }, (error) {
-    //   print(error + '123');
-    //   //失败后需要做的事
-    // });
+    DioManager.getInstance().post("/user/userName/login", params, (result) {
+      print(result);
+      //请求成功需要做的事
+    }, (error) {
+      print(error + '123');
+      //失败后需要做的事
+    });
 
     // if (_userID == '') {
     //   _showMessageDialog('账号不可为空');
@@ -79,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
       padding: const EdgeInsets.fromLTRB(0, 0, 0.0, 0.0),
       child: new TextFormField(
         maxLines: 1,
-        keyboardType: TextInputType.emailAddress,
+        keyboardType: TextInputType.phone,
         autofocus: false,
         style: TextStyle(fontSize: 14.sp),
         decoration: new InputDecoration(
