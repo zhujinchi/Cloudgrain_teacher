@@ -114,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
         decoration: new InputDecoration(
           contentPadding: EdgeInsets.only(left: 0.w),
           border: InputBorder.none,
-          hintText: '请输入密码',
+          hintText: '请输入验证码',
           hintStyle: TextStyle(
               color: Color.fromRGBO(155, 157, 161, 1),
               fontFamily: 'PingFangSC-Medium',

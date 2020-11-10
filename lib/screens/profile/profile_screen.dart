@@ -23,6 +23,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         brightness: Brightness.light,
         backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+        elevation: 0.8,
         automaticallyImplyLeading: false,
       ),
       //内容区域

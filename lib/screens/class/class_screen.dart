@@ -128,6 +128,7 @@ class _CloudClassScreenState extends State<CloudClassScreen>
           appBar: AppBar(
             backgroundColor: Colors.white,
             brightness: Brightness.light,
+            elevation: 0.8,
             //flexibleSpace: SafeArea(child: null),
             automaticallyImplyLeading: false,
             title: Container(

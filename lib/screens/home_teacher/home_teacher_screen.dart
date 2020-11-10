@@ -130,28 +130,30 @@ class _HomeTeacherScreenState extends State<HomeTeacherScreen>
                 height: 68.w,
               ),
               Container(
+                  height: 134.w,
                   child: Column(
-                children: <Widget>[
-                  Container(
-                    width: 164.w,
-                    height: 68.w,
-                    child: Image.asset(
-                      'assets/images/home_pgzy@3x.png',
-                      fit: BoxFit.fill,
-                    ),
-                    alignment: AlignmentDirectional.center,
-                  ),
-                  Container(
-                    width: 164.w,
-                    height: 60.w,
-                    child: Image.asset(
-                      'assets/images/home_ctj@3x.png',
-                      fit: BoxFit.fill,
-                    ),
-                    alignment: AlignmentDirectional.center,
-                  )
-                ],
-              )),
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Container(
+                        width: 164.w,
+                        height: 68.w,
+                        child: Image.asset(
+                          'assets/images/home_pgzy@3x.png',
+                          fit: BoxFit.fitWidth,
+                        ),
+                        alignment: AlignmentDirectional.center,
+                      ),
+                      Container(
+                        width: 164.w,
+                        height: 60.w,
+                        child: Image.asset(
+                          'assets/images/home_ctj@3x.png',
+                          fit: BoxFit.fitWidth,
+                        ),
+                        alignment: AlignmentDirectional.center,
+                      )
+                    ],
+                  )),
             ],
           )),
     );
@@ -168,7 +170,7 @@ class _HomeTeacherScreenState extends State<HomeTeacherScreen>
               Container(
                 width: 33.w,
                 height: 33.w,
-                child: Image.asset('assets/images/home_lb@3x.png'),
+                child: Image.asset('assets/images/home_notice@3x.png'),
                 alignment: AlignmentDirectional.center,
               ),
               Container(
@@ -329,6 +331,7 @@ class _HomeTeacherScreenState extends State<HomeTeacherScreen>
                     fontFamily: 'PingFangSC-Regular'),
               ),
             ),
+            //选择器
             Container()
           ],
         ),
