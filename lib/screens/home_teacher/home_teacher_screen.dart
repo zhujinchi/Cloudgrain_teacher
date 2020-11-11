@@ -1,5 +1,6 @@
 import 'package:Cloudgrain_teacher/screens/Test/test_screen_1.dart';
 import 'package:Cloudgrain_teacher/screens/Test/test_screen_2.dart';
+import 'package:Cloudgrain_teacher/screens/home_teacher/home_assignHomework.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:Cloudgrain_teacher/config/palette.dart';
@@ -63,25 +64,13 @@ class _HomeTeacherScreenState extends State<HomeTeacherScreen>
         brightness: Brightness.light,
         elevation: 0.0,
       ),
-      // actions: <Widget>[
-      //   IconButton(
-      //     icon: const Icon(Icons.notifications_none),
-      //     iconSize: 28.0,
-      //     onPressed: () {},
-      //   ),
-      // ],
-      // appBar: AppBar(
-      //   title: Text('早上好，肖老师'),
-      //   centerTitle: false,
-      //   backgroundColor: Colors.white,
-      //   brightness: Brightness.light,
-      // ),
+
       //内容区域
       body: CustomScrollView(
         //physics: ClampingScrollPhysics(),
         slivers: <Widget>[
           //_buildGreeting(),
-          _buildHomeworkerSet(),
+          _buildHomeworkerSet(context),
           _buildNotification(),
           _buildClassLabel(),
           _buildClassSelector(),
@@ -108,7 +97,7 @@ class _HomeTeacherScreenState extends State<HomeTeacherScreen>
     );
   }
 
-  SliverToBoxAdapter _buildHomeworkerSet() {
+  SliverToBoxAdapter _buildHomeworkerSet(BuildContext context) {
     return SliverToBoxAdapter(
       child: Container(
           color: Colors.white,
@@ -116,14 +105,20 @@ class _HomeTeacherScreenState extends State<HomeTeacherScreen>
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Container(
-                width: 170.w,
-                height: 134.w,
-                child: Image.asset(
-                  'assets/images/home_bzzy@3x.png',
-                  fit: BoxFit.fill,
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).push(CupertinoPageRoute(
+                      builder: (context) => AssignHomeworkScreen()));
+                },
+                child: Container(
+                  width: 170.w,
+                  height: 134.w,
+                  child: Image.asset(
+                    'assets/images/home_bzzy@3x.png',
+                    fit: BoxFit.fill,
+                  ),
+                  alignment: AlignmentDirectional.center,
                 ),
-                alignment: AlignmentDirectional.center,
               ),
               Container(
                 width: 10.w,
