@@ -35,7 +35,8 @@ dependencies:
   flutter_custom_calendar: ^1.0.5
   keyboard_avoider: ^0.1.2
   dio: ^3.0.10 #网络请求库
-  
+  image_picker: ^0.6.7+14 #图片选择
+  bottom_sheet: ^0.0.1-dev.5
   #flutter_custom_calendar: ^1.0.4+0.5
   #camera: ^0.5.2+2
 

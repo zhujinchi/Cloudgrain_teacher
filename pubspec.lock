@@ -15,6 +15,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.0-nullsafety.1"
+  bottom_sheet:
+    dependency: "direct main"
+    description:
+      name: bottom_sheet
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.1-dev.5"
   bubble_tab_indicator:
     dependency: "direct main"
     description:
@@ -153,6 +160,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.0.3"
+  flutter_plugin_android_lifecycle:
+    dependency: transitive
+    description:
+      name: flutter_plugin_android_lifecycle
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.11"
   flutter_screenutil:
     dependency: "direct main"
     description:
@@ -200,6 +214,20 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.1.4"
+  image_picker:
+    dependency: "direct main"
+    description:
+      name: image_picker
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.6.7+14"
+  image_picker_platform_interface:
+    dependency: transitive
+    description:
+      name: image_picker_platform_interface
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.1.1"
   intl:
     dependency: transitive
     description:
@@ -387,6 +415,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.0-nullsafety.1"
+  surf_lint_rules:
+    dependency: transitive
+    description:
+      name: surf_lint_rules
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.2-dev.1"
   synchronized:
     dependency: transitive
     description:

@@ -64,6 +64,10 @@
         "source": "/Users/angzeng/.gradle/caches/transforms-2/files-2.1/6b399c2363bb098ebde1725d903cbda0/core-1.1.0/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
     },
     {
+        "merged": "/Users/angzeng/Cloudgrain_project/Cloudgrain_teacher/build/app/intermediates/res/merged/debug/xml_flutter_image_picker_file_paths.xml.flat",
+        "source": "/Users/angzeng/Cloudgrain_project/Cloudgrain_teacher/build/image_picker/intermediates/packaged_res/debug/xml/flutter_image_picker_file_paths.xml"
+    },
+    {
         "merged": "/Users/angzeng/Cloudgrain_project/Cloudgrain_teacher/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "/Users/angzeng/.gradle/caches/transforms-2/files-2.1/6b399c2363bb098ebde1725d903cbda0/core-1.1.0/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
     },

@@ -1,6 +1,8 @@
+import 'package:Cloudgrain_teacher/screens/home_teacher/home_publishHomework.dart';
 import 'package:Cloudgrain_teacher/widgets/RoundCheckBox.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/cupertino.dart';
 
 class AssignHomeworkScreen extends StatefulWidget {
   @override
@@ -55,9 +57,9 @@ class _AssignHomeworkScreenState extends State<AssignHomeworkScreen> {
   Widget getRow(int a) {
     if (a == 8) {
       return Container(
-        padding: EdgeInsets.fromLTRB(
-            31.w, a > 8 ? 480.h - 512.w : 480.h - a * 64.w, 31.w, 0),
-        //padding: EdgeInsets.fromLTRB(31.w, 480.h - a * 64.w, 31.w, 0),
+        //padding: EdgeInsets.fromLTRB(
+        //31.w, a > 8 ? 480.h - 512.w : 480.h - a * 64.w, 31.w, 0),
+        padding: EdgeInsets.fromLTRB(31.w, 480.h - (a - 1) * 64.w, 31.w, 0),
         child: Container(
           //color: Colors.red,
           width: 313.w,
@@ -78,7 +80,7 @@ class _AssignHomeworkScreenState extends State<AssignHomeworkScreen> {
                 borderRadius: BorderRadius.circular(4.w)),
             //borderSide: BorderSide(color: Colors.orange, width: 1),
             onPressed: () {
-              //_onLogin();
+              GotoPublishHomeworkScreen(context);
             },
           ),
         ),
@@ -133,5 +135,10 @@ class _AssignHomeworkScreenState extends State<AssignHomeworkScreen> {
             ),
           ));
     }
+  }
+
+  void GotoPublishHomeworkScreen(BuildContext context) {
+    Navigator.of(context).push(
+        CupertinoPageRoute(builder: (context) => PublishHomeworkScreen()));
   }
 }

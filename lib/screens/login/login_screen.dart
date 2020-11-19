@@ -128,27 +128,42 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget _showUserTermAndPrivacy() {
     return Container(
       //color: Colors.red,
-      padding: EdgeInsets.fromLTRB(0, 0, 0, 20.w),
+      padding: EdgeInsets.fromLTRB(0, 7.w, 0, 20.w),
       child: Row(
-        // //crossAxisAlignment: CrossAxisAlignment.end,
-        // mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          IconButton(
-              icon: Icon(_checkIcon),
-              iconSize: 17.w,
-              padding: EdgeInsets.fromLTRB(0.w, 0.w, 0.w, 0.w),
-              color: Color.fromRGBO(30, 94, 255, 1),
-              onPressed: () {
-                setState(() {
-                  _isChecked = !_isChecked;
-                  if (_isChecked) {
-                    _checkIcon = Icons.check_box;
-                  } else {
-                    _checkIcon = Icons.check_box_outline_blank;
-                  }
-                });
-              }),
+          InkWell(
+            onTap: () {
+              setState(() {
+                _isChecked = !_isChecked;
+              });
+            },
+            child: Container(
+              width: 12.w,
+              height: 12.w,
+              // decoration: BoxDecoration(
+              //     shape: BoxShape.circle,
+              color: _isChecked
+                  ? Color.fromRGBO(0, 81, 255, 1)
+                  : Color.fromRGBO(238, 238, 238, 1),
+              //),
+              //child: Padding(
+              padding: const EdgeInsets.all(0.0),
+              child: _isChecked
+                  ? Icon(
+                      Icons.check,
+                      size: 12.w,
+                      color: Colors.white,
+                    )
+                  : Icon(
+                      Icons.brightness_1,
+                      size: 12.w,
+                      color: Color.fromRGBO(238, 238, 238, 1),
+                    ),
+              //),
+            ),
+          ),
           Container(
+            padding: EdgeInsets.only(left: 6.w),
             child: RichText(
                 text: TextSpan(
                     text: '我已阅读并同意',
@@ -189,118 +204,127 @@ class _LoginScreenState extends State<LoginScreen> {
           elevation: 0.0,
         ),
         resizeToAvoidBottomPadding: false,
-        body: Column(
-          children: <Widget>[
-            Container(
-              padding: EdgeInsets.fromLTRB(22.w, 0.w, 22.w, 60.w),
-              width: 375.w,
-              //height: 183.w,
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    height: 65.w,
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      '云豆课堂',
-                      style: TextStyle(
-                          color: Color.fromRGBO(255, 255, 255, 1),
-                          fontSize: 46.sp,
-                          fontFamily: 'PingFangSC-Medium'),
-                    ),
-                  ),
-                  Container(
-                    height: 22.w,
-                    //color: Colors.white,
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      '学贵得师，亦贵得友',
-                      style: TextStyle(
-                          color: Color.fromRGBO(255, 255, 255, 1),
-                          fontSize: 16.sp,
-                          fontFamily: 'PingFangSC-Medium'),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              width: 331.w,
-              height: 240.w,
-              padding: EdgeInsets.fromLTRB(16.w, 20.w, 16.w, 0),
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(7.w),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Color.fromRGBO(224, 224, 224, 0.5),
-                        offset: Offset(0, 2.w), //阴影xy轴偏移量
-                        blurRadius: 6.w, //阴影模糊程度
-                        spreadRadius: 0
-
-                        ///阴影扩散程度
-                        )
-                  ]),
-              child: Column(
-                children: <Widget>[
-                  Form(
-                    key: _formKey,
-                    child: Container(
-                      //color: Colors.red,
-                      //width: 331.w,
-                      height: 82.h,
-                      //padding: EdgeInsets.fromLTRB(22.w, 0, 22.w, 0),
-                      child: ListView(
-                        children: <Widget>[
-                          _showAccountInput(),
-                          Container(
-                            height: 1.w,
-                            color: Color.fromRGBO(228, 228, 228, 1),
-                          ),
-                          Container(
-                            height: 10.w,
-                          ),
-                          _showPasswordInput(),
-                          Container(
-                            height: 1.w,
-                            color: Color.fromRGBO(228, 228, 228, 1),
-                          ),
-                        ],
+        body: GestureDetector(
+          onTap: () {
+            FocusScopeNode currentFocus = FocusScope.of(context);
+            if (!currentFocus.hasPrimaryFocus &&
+                currentFocus.focusedChild != null) {
+              FocusManager.instance.primaryFocus.unfocus();
+            }
+          },
+          child: Column(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.fromLTRB(22.w, 0.w, 22.w, 60.w),
+                width: 375.w,
+                //height: 183.w,
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      height: 65.w,
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        '云豆课堂',
+                        style: TextStyle(
+                            color: Color.fromRGBO(255, 255, 255, 1),
+                            fontSize: 46.sp,
+                            fontFamily: 'PingFangSC-Medium'),
                       ),
                     ),
-                  ),
-                  Container(
-                    height: 52.w,
-                    alignment: Alignment.topLeft,
-                    child: _showUserTermAndPrivacy(),
-                  ),
-                  Container(
-                    //color: Colors.red,
-                    width: 296.w,
-                    height: 43.w,
-                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                    child: MaterialButton(
+                    Container(
+                      height: 22.w,
+                      //color: Colors.white,
+                      alignment: Alignment.centerLeft,
                       child: Text(
-                        '登录',
+                        '学贵得师，亦贵得友',
                         style: TextStyle(
-                          color: Color.fromRGBO(255, 255, 255, 1),
-                          fontFamily: 'PingFangSC-Semibold',
-                          fontSize: 16.sp,
+                            color: Color.fromRGBO(255, 255, 255, 1),
+                            fontSize: 16.sp,
+                            fontFamily: 'PingFangSC-Medium'),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                width: 331.w,
+                height: 240.w,
+                padding: EdgeInsets.fromLTRB(16.w, 20.w, 16.w, 0),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(7.w),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Color.fromRGBO(224, 224, 224, 0.5),
+                          offset: Offset(0, 2.w), //阴影xy轴偏移量
+                          blurRadius: 6.w, //阴影模糊程度
+                          spreadRadius: 0
+
+                          ///阴影扩散程度
+                          )
+                    ]),
+                child: Column(
+                  children: <Widget>[
+                    Form(
+                      key: _formKey,
+                      child: Container(
+                        //color: Colors.red,
+                        //width: 331.w,
+                        height: 82.h,
+                        //padding: EdgeInsets.fromLTRB(22.w, 0, 22.w, 0),
+                        child: ListView(
+                          children: <Widget>[
+                            _showAccountInput(),
+                            Container(
+                              height: 1.w,
+                              color: Color.fromRGBO(228, 228, 228, 1),
+                            ),
+                            Container(
+                              height: 10.w,
+                            ),
+                            _showPasswordInput(),
+                            Container(
+                              height: 1.w,
+                              color: Color.fromRGBO(228, 228, 228, 1),
+                            ),
+                          ],
                         ),
                       ),
-
-                      color: Color.fromRGBO(201, 204, 210, 1),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6.w)),
-                      //borderSide: BorderSide(color: Colors.orange, width: 1),
-                      onPressed: () {
-                        _onLogin();
-                      },
                     ),
-                  ),
-                ],
+                    Container(
+                      height: 52.w,
+                      alignment: Alignment.topLeft,
+                      child: _showUserTermAndPrivacy(),
+                    ),
+                    Container(
+                      //color: Colors.red,
+                      width: 296.w,
+                      height: 43.w,
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                      child: MaterialButton(
+                        child: Text(
+                          '登录',
+                          style: TextStyle(
+                            color: Color.fromRGBO(255, 255, 255, 1),
+                            fontFamily: 'PingFangSC-Semibold',
+                            fontSize: 16.sp,
+                          ),
+                        ),
+
+                        color: Color.fromRGBO(30, 94, 255, 1),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(6.w)),
+                        //borderSide: BorderSide(color: Colors.orange, width: 1),
+                        onPressed: () {
+                          _onLogin();
+                        },
+                      ),
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ));
   }
 
