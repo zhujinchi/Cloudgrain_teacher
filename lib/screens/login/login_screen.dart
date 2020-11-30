@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:Cloudgrain_teacher/widgets/network/net_api.dart';
 import 'package:dio/dio.dart';
+import 'dart:io';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -79,8 +80,9 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget _showAccountInput() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, 0.0, 0.0),
+    return Container(
+      height: Platform.isIOS ? null : 40.w,
+      padding: EdgeInsets.only(top: 0.w),
       child: new TextFormField(
         maxLines: 1,
         keyboardType: TextInputType.phone,
@@ -104,8 +106,9 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget _showPasswordInput() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, 0.0, 0.0),
+    return Container(
+      height: Platform.isIOS ? null : 40.w,
+      padding: EdgeInsets.only(top: 0.w),
       child: new TextFormField(
         maxLines: 1,
         obscureText: true,
@@ -128,7 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget _showUserTermAndPrivacy() {
     return Container(
       //color: Colors.red,
-      padding: EdgeInsets.fromLTRB(0, 7.w, 0, 20.w),
+      padding: EdgeInsets.fromLTRB(0, 7.w, 0, 0.w),
       child: Row(
         children: <Widget>[
           InkWell(
@@ -212,117 +215,103 @@ class _LoginScreenState extends State<LoginScreen> {
               FocusManager.instance.primaryFocus.unfocus();
             }
           },
-          child: Column(
+          child: Stack(
             children: <Widget>[
-              Container(
-                padding: EdgeInsets.fromLTRB(22.w, 0.w, 22.w, 60.w),
-                width: 375.w,
-                //height: 183.w,
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      height: 65.w,
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        '云豆课堂',
-                        style: TextStyle(
-                            color: Color.fromRGBO(255, 255, 255, 1),
-                            fontSize: 46.sp,
-                            fontFamily: 'PingFangSC-Medium'),
-                      ),
-                    ),
-                    Container(
-                      height: 22.w,
-                      //color: Colors.white,
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        '学贵得师，亦贵得友',
-                        style: TextStyle(
-                            color: Color.fromRGBO(255, 255, 255, 1),
-                            fontSize: 16.sp,
-                            fontFamily: 'PingFangSC-Medium'),
-                      ),
-                    )
-                  ],
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                child: Container(
+                  width: 375.w,
+                  height: 667.h,
+                  color: Color.fromRGBO(30, 94, 255, 1),
                 ),
               ),
-              Container(
-                width: 331.w,
-                height: 240.w,
-                padding: EdgeInsets.fromLTRB(16.w, 20.w, 16.w, 0),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(7.w),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Color.fromRGBO(224, 224, 224, 0.5),
-                          offset: Offset(0, 2.w), //阴影xy轴偏移量
-                          blurRadius: 6.w, //阴影模糊程度
-                          spreadRadius: 0
-
-                          ///阴影扩散程度
-                          )
-                    ]),
-                child: Column(
-                  children: <Widget>[
-                    Form(
-                      key: _formKey,
-                      child: Container(
-                        //color: Colors.red,
-                        //width: 331.w,
-                        height: 82.h,
-                        //padding: EdgeInsets.fromLTRB(22.w, 0, 22.w, 0),
-                        child: ListView(
-                          children: <Widget>[
-                            _showAccountInput(),
-                            Container(
-                              height: 1.w,
-                              color: Color.fromRGBO(228, 228, 228, 1),
-                            ),
-                            Container(
-                              height: 10.w,
-                            ),
-                            _showPasswordInput(),
-                            Container(
-                              height: 1.w,
-                              color: Color.fromRGBO(228, 228, 228, 1),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 52.w,
-                      alignment: Alignment.topLeft,
-                      child: _showUserTermAndPrivacy(),
-                    ),
-                    Container(
-                      //color: Colors.red,
-                      width: 296.w,
-                      height: 43.w,
-                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                      child: MaterialButton(
-                        child: Text(
-                          '登录',
-                          style: TextStyle(
-                            color: Color.fromRGBO(255, 255, 255, 1),
-                            fontFamily: 'PingFangSC-Semibold',
-                            fontSize: 16.sp,
+              Padding(
+                padding: EdgeInsets.fromLTRB(21.w, 8.w, 0, 0),
+                child: Text(
+                  '云豆课堂',
+                  style: TextStyle(
+                      color: Color.fromRGBO(255, 255, 255, 1),
+                      fontSize: 46.sp,
+                      fontFamily: 'PingFangSC-Medium'),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(22.w, 73.w, 0, 0),
+                child: Text(
+                  '学贵得师，亦贵得友',
+                  style: TextStyle(
+                      color: Color.fromRGBO(255, 255, 255, 1),
+                      fontSize: 16.sp,
+                      fontFamily: 'PingFangSC-Medium'),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(22.w, 155.w, 0, 0),
+                child: Container(
+                  width: 331.w,
+                  height: 240.w,
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(254, 255, 255, 1),
+                      borderRadius: BorderRadius.circular(6.w)),
+                  padding: EdgeInsets.fromLTRB(18.w, 21.w, 18.w, 0),
+                  child: Column(
+                    children: <Widget>[
+                      Form(
+                        key: _formKey,
+                        child: Container(
+                          height: 87.h,
+                          child: Column(
+                            children: <Widget>[
+                              _showAccountInput(),
+                              Container(
+                                height: 1.w,
+                                color: Color.fromRGBO(228, 228, 228, 1),
+                              ),
+                              Container(
+                                height: 10.w,
+                              ),
+                              _showPasswordInput(),
+                              Container(
+                                height: 1.w,
+                                color: Color.fromRGBO(228, 228, 228, 1),
+                              ),
+                            ],
                           ),
                         ),
-
-                        color: Color.fromRGBO(30, 94, 255, 1),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(6.w)),
-                        //borderSide: BorderSide(color: Colors.orange, width: 1),
-                        onPressed: () {
-                          _onLogin();
-                        },
                       ),
-                    )
-                  ],
+                      Container(
+                        height: 52.w,
+                        alignment: Alignment.topLeft,
+                        child: _showUserTermAndPrivacy(),
+                      ),
+                      Container(
+                        //color: Colors.red,
+                        width: 296.w,
+                        height: 43.w,
+                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        child: MaterialButton(
+                          child: Text(
+                            '登录',
+                            style: TextStyle(
+                              color: Color.fromRGBO(255, 255, 255, 1),
+                              fontFamily: 'PingFangSC-Semibold',
+                              fontSize: 16.sp,
+                            ),
+                          ),
+
+                          color: Color.fromRGBO(30, 94, 255, 1),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(6.w)),
+                          //borderSide: BorderSide(color: Colors.orange, width: 1),
+                          onPressed: () {
+                            _onLogin();
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+              )
             ],
           ),
         ));

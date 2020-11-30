@@ -28,13 +28,22 @@ class _ListViewBookPageState extends State<ListViewBookPage> {
 
   @override
   Widget build(BuildContext context) {
-    return new Container(
+    return new RefreshIndicator(
+      onRefresh: _refresh,
       child: ListView.builder(
           itemCount: list.length,
           itemBuilder: (BuildContext context, int a) {
             return getRow(a);
           }),
     );
+  }
+
+  Future<void> _refresh() async {
+    await Future<Null>.delayed(Duration(seconds: 3), () {
+      print('刷新');
+      setState(() {});
+      return null;
+    });
   }
 
   Widget getRow(int a) {
@@ -82,10 +91,11 @@ class _ListViewBookPageState extends State<ListViewBookPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Container(
-                              width: 100.w,
-                              height: 100.w,
-                              color: Colors.amber,
-                            ),
+                                width: 100.w,
+                                height: 100.w,
+                                decoration: BoxDecoration(
+                                    color: Colors.blueGrey,
+                                    borderRadius: BorderRadius.circular(2.w))),
                             Container(
                               width: 106.w,
                               height: 100.w,
@@ -100,21 +110,105 @@ class _ListViewBookPageState extends State<ListViewBookPage> {
                                   ),
                                   Container(
                                     width: 106.w,
-                                    height: 34.w,
-                                    padding: EdgeInsets.only(top: 7.w),
-                                    color: Colors.amber,
-                                  ),
-                                  Container(
-                                    width: 106.w,
-                                    height: 25.w,
-                                    padding: EdgeInsets.only(top: 11.w),
-                                    // child: OutlineButton(
-                                    //   borderSide: BorderSide,
-                                    // ),
+                                    height: 59.w,
+                                    child: Stack(
+                                      children: <Widget>[
+                                        Padding(
+                                            padding: EdgeInsets.fromLTRB(
+                                                0, 7.w, 0, 0),
+                                            child: Container(
+                                                width: 27.w,
+                                                height: 27.w,
+                                                decoration: BoxDecoration(
+                                                    color: Colors.blueGrey,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            13.5.w)))),
+                                        Padding(
+                                            padding: EdgeInsets.fromLTRB(
+                                                20.w, 7.w, 0, 0),
+                                            child: Container(
+                                                width: 27.w,
+                                                height: 27.w,
+                                                decoration: BoxDecoration(
+                                                    color: Colors.redAccent,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            13.5.w)))),
+                                        Padding(
+                                            padding: EdgeInsets.fromLTRB(
+                                                38.w, 7.w, 0, 0),
+                                            child: Container(
+                                                width: 27.w,
+                                                height: 27.w,
+                                                decoration: BoxDecoration(
+                                                    color: Colors.greenAccent,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            13.5.w)))),
+                                        Padding(
+                                          padding: EdgeInsets.fromLTRB(
+                                              0.w, 45.w, 0, 0),
+                                          child: Container(
+                                            width: 34.w,
+                                            height: 14.w,
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              border: new Border.all(
+                                                  width: 0.7.w,
+                                                  color: Color.fromRGBO(
+                                                      255, 148, 111, 1)),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(3.w)),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                '4年级',
+                                                style: TextStyle(
+                                                    color: Color.fromRGBO(
+                                                        245, 85, 32, 1),
+                                                    fontSize: 8.w,
+                                                    fontFamily:
+                                                        'PingFangSC-Regular'),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.fromLTRB(
+                                              46.w, 45.w, 0, 0),
+                                          child: Container(
+                                            width: 45.w,
+                                            height: 14.w,
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              border: new Border.all(
+                                                  width: 0.7.w,
+                                                  color: Color.fromRGBO(
+                                                      255, 148, 111, 1)),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(3.w)),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                '同步练习',
+                                                style: TextStyle(
+                                                    color: Color.fromRGBO(
+                                                        245, 85, 32, 1),
+                                                    fontSize: 8.w,
+                                                    fontFamily:
+                                                        'PingFangSC-Regular'),
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
                                   Container(
                                     width: 106.w,
                                     height: 19.w,
+                                    padding: EdgeInsets.only(top: 6.w),
                                     child: Text(
                                       '876人参加与打卡',
                                       style: TextStyle(
@@ -137,6 +231,7 @@ class _ListViewBookPageState extends State<ListViewBookPage> {
                           width: 50.w,
                           height: 20.w,
                           child: MaterialButton(
+                            elevation: 0,
                             child: Text(
                               '去练习',
                               style: TextStyle(

@@ -1,4 +1,4 @@
-import 'package:Cloudgrain_teacher/screens/study/study_screen.dart';
+import 'package:Cloudgrain_teacher/screens/read/read_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:Cloudgrain_teacher/screens/class/class_screen.dart';
 import 'package:Cloudgrain_teacher/screens/profile/profile_screen.dart';
@@ -42,7 +42,7 @@ class _BottomTeacherScreenState extends State<BottomTeacherScreen> {
     final _tabPages = <Widget>[
       HomeTeacherScreen(),
       CloudClassScreen(),
-      StudyTogatherScreen(),
+      ReadScreen(),
       ProfileScreen(),
     ];
 

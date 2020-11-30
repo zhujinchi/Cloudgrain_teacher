@@ -323,7 +323,10 @@ class _CloudClassScreenState extends State<CloudClassScreen>
         child: Container(
             decoration: BoxDecoration(
                 color: Color.fromRGBO(255, 255, 255, 1),
-                borderRadius: BorderRadius.circular(7.w),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(7.w),
+                  bottomRight: Radius.circular(7.w),
+                ),
                 boxShadow: [
                   BoxShadow(
                       color: Color.fromRGBO(180, 180, 180, 0.11),
