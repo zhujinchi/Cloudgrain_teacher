@@ -33,12 +33,29 @@ class _SplashPage extends State<SplashPage> {
         width: 375.w,
         height: 667.h,
         color: Color.fromRGBO(235, 236, 240, 1),
-        child: Center(
-          child: Image.asset(
-            'assets/icons/registered_icon_a@3x.png',
-            width: 130.w,
-            height: 130.w,
-          ),
+        child: Stack(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(left: 115.w, top: 229.h),
+              child: Image.asset(
+                'assets/images/tb_wfd_js@3x.png',
+                width: 145.w,
+                height: 45.w,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 115.w, top: 284.h),
+              child: Text(
+                '作业指导好帮手',
+                style: TextStyle(
+                    color: Color.fromRGBO(59, 61, 79, 1),
+                    fontSize: 15.sp,
+                    letterSpacing: 5.26.sp,
+                    decoration: TextDecoration.none,
+                    fontFamily: 'PingFangSC-Regular'),
+              ),
+            )
+          ],
         ),
       ),
     );

@@ -226,15 +226,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.fromLTRB(21.w, 8.w, 0, 0),
-                child: Text(
-                  '云豆课堂',
-                  style: TextStyle(
-                      color: Color.fromRGBO(255, 255, 255, 1),
-                      fontSize: 46.sp,
-                      fontFamily: 'PingFangSC-Medium'),
-                ),
-              ),
+                  padding: EdgeInsets.fromLTRB(21.w, 21.w, 0, 0),
+                  child: Container(
+                    width: 137.w,
+                    height: 38.w,
+                    child: Image.asset(
+                      'assets/images/logo_wfd_b@3x.png',
+                      width: 137.w,
+                      height: 38.w,
+                    ),
+                  )),
               Padding(
                 padding: EdgeInsets.fromLTRB(22.w, 73.w, 0, 0),
                 child: Text(
@@ -311,7 +312,22 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                 ),
-              )
+              ),
+              Padding(
+                  padding: EdgeInsets.only(left: 274.w, top: 240.w),
+                  child: Container(
+                      width: 71.w,
+                      height: 20.w,
+                      child: Center(
+                          child: InkWell(
+                              onTap: () {},
+                              child: Text(
+                                '获取验证码',
+                                style: TextStyle(
+                                    color: Color.fromRGBO(0, 81, 255, 1),
+                                    fontSize: 12.sp,
+                                    fontFamily: 'PingFangSC-Regular'),
+                              ))))),
             ],
           ),
         ));

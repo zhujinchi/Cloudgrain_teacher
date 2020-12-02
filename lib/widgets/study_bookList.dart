@@ -94,7 +94,7 @@ class _ListViewBookPageState extends State<ListViewBookPage> {
                                 width: 100.w,
                                 height: 100.w,
                                 decoration: BoxDecoration(
-                                    color: Colors.blueGrey,
+                                    color: Color.fromRGBO(216, 216, 216, 1),
                                     borderRadius: BorderRadius.circular(2.w))),
                             Container(
                               width: 106.w,
@@ -120,7 +120,8 @@ class _ListViewBookPageState extends State<ListViewBookPage> {
                                                 width: 27.w,
                                                 height: 27.w,
                                                 decoration: BoxDecoration(
-                                                    color: Colors.blueGrey,
+                                                    color: Color.fromRGBO(
+                                                        216, 216, 216, 1),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             13.5.w)))),
@@ -131,7 +132,8 @@ class _ListViewBookPageState extends State<ListViewBookPage> {
                                                 width: 27.w,
                                                 height: 27.w,
                                                 decoration: BoxDecoration(
-                                                    color: Colors.redAccent,
+                                                    color: Color.fromRGBO(
+                                                        167, 167, 167, 1),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             13.5.w)))),
@@ -142,7 +144,8 @@ class _ListViewBookPageState extends State<ListViewBookPage> {
                                                 width: 27.w,
                                                 height: 27.w,
                                                 decoration: BoxDecoration(
-                                                    color: Colors.greenAccent,
+                                                    color: Color.fromRGBO(
+                                                        120, 120, 120, 1),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             13.5.w)))),
