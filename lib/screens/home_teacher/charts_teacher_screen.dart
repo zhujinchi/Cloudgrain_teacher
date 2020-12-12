@@ -88,9 +88,16 @@ class _TeacherChartsScreenState extends State<TeacherChartsScreen>
             // 导航栏高度103
             height: 667.h - 46.w - 103,
             //后期代码优化
-            child: TabBarView(
-                controller: this._tabController,
-                children: <Widget>[TeacherBriefCharts(), Container()]),
+            child:
+                TabBarView(controller: this._tabController, children: <Widget>[
+              TeacherBriefCharts(),
+              Container(
+                alignment: Alignment.topCenter,
+                child: Image.asset(
+                  'assets/images/temp_charts_detail@2x.png',
+                ),
+              )
+            ]),
           )
         ],
       ),

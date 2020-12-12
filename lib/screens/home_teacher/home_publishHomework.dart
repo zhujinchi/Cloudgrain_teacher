@@ -60,23 +60,11 @@ class _PublishHomeworkScreenState extends State<PublishHomeworkScreen> {
         child: Container(
       width: 375.w,
       height: 60.w,
-      child: new TextFormField(
-        maxLines: 1,
-        keyboardAppearance: Brightness.light,
-        keyboardType: TextInputType.text,
-        autofocus: false,
-        style: TextStyle(fontSize: 14.sp),
-        decoration: new InputDecoration(
-          contentPadding: EdgeInsets.only(left: 0.w),
-          border: InputBorder.none,
-          hintText: '手机号/用户名',
-          hintStyle: TextStyle(
-              color: Color.fromRGBO(155, 157, 161, 1),
-              fontFamily: 'PingFangSC-Medium',
-              fontSize: 14.sp),
-        ),
-        //color: Colors.black,
+      child: Image.asset(
+        'assets/images/temp_assign_1@2x.png',
+        width: 375.w,
       ),
+      //color: Colors.black,
     ));
   }
 
@@ -85,7 +73,10 @@ class _PublishHomeworkScreenState extends State<PublishHomeworkScreen> {
       child: Container(
         width: 375.w,
         height: 180.w,
-        //color: Colors.black,
+        child: Image.asset(
+          'assets/images/temp_assign_3@2x.png',
+          width: 375.w,
+        ), //color: Colors.black,
       ),
     );
   }
@@ -212,7 +203,9 @@ class _PublishHomeworkScreenState extends State<PublishHomeworkScreen> {
                 Container(
                   width: 6.w,
                   height: 12.w,
-                  color: Color.fromRGBO(104, 212, 185, 1),
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(104, 212, 185, 1),
+                      borderRadius: BorderRadius.circular(3.w)),
                 ),
                 Container(
                   height: 25.w,

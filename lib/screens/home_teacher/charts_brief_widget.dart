@@ -118,10 +118,10 @@ class _TeacherBriefChartsState extends State<TeacherBriefCharts>
                 controller: this._tabController,
                 children: <Widget>[
                   ChartsBoard(),
-                  Container(),
-                  Container(),
-                  Container(),
-                  Container()
+                  ChartsBoard(),
+                  ChartsBoard(),
+                  ChartsBoard(),
+                  ChartsBoard()
                 ]),
           )
         ],

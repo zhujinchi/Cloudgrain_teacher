@@ -1,4 +1,5 @@
 import 'package:Cloudgrain_teacher/screens/home_teacher/home_assignHomework.dart';
+import 'package:Cloudgrain_teacher/screens/home_teacher/homework_correcting.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:Cloudgrain_teacher/config/palette.dart';
@@ -127,14 +128,22 @@ class _HomeTeacherScreenState extends State<HomeTeacherScreen>
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Container(
-                        width: 164.w,
-                        height: 68.w,
-                        child: Image.asset(
-                          'assets/images/home_pgzy@3x.png',
-                          fit: BoxFit.fitWidth,
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(CupertinoPageRoute(
+                              builder: (context) => HomeworkCorrectingScreen(
+                                    inforType: '批改作业',
+                                  )));
+                        },
+                        child: Container(
+                          width: 164.w,
+                          height: 68.w,
+                          child: Image.asset(
+                            'assets/images/home_pgzy@3x.png',
+                            fit: BoxFit.fitWidth,
+                          ),
+                          alignment: AlignmentDirectional.center,
                         ),
-                        alignment: AlignmentDirectional.center,
                       ),
                       Container(
                         width: 164.w,

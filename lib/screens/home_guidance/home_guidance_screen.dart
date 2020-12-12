@@ -1,3 +1,5 @@
+import 'package:Cloudgrain_teacher/screens/home_teacher/charts_teacher_screen.dart';
+import 'package:Cloudgrain_teacher/screens/home_teacher/homework_correcting.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -79,14 +81,22 @@ class _HomeGuidanceScreenState extends State<HomeGuidanceScreen>
 
   SliverToBoxAdapter _buildNotification() {
     return SliverToBoxAdapter(
-      child: Container(
-        width: 375.w,
-        height: 80.w,
-        padding: EdgeInsets.fromLTRB(16.w, 3.w, 16.w, 0),
-        color: Colors.white,
-        child: Image.asset(
-          'assets/images/home_pgzy_entrance@3x.png',
-          fit: BoxFit.fill,
+      child: InkWell(
+        onTap: () {
+          Navigator.of(context).push(CupertinoPageRoute(
+              builder: (context) => HomeworkCorrectingScreen(
+                    inforType: '批改作业',
+                  )));
+        },
+        child: Container(
+          width: 375.w,
+          height: 80.w,
+          padding: EdgeInsets.fromLTRB(16.w, 3.w, 16.w, 0),
+          color: Colors.white,
+          child: Image.asset(
+            'assets/images/home_pgzy_entrance@3x.png',
+            fit: BoxFit.fill,
+          ),
         ),
       ),
     );
@@ -101,7 +111,8 @@ class _HomeGuidanceScreenState extends State<HomeGuidanceScreen>
         color: Colors.white,
         child: InkWell(
           onTap: () {
-            print('object');
+            Navigator.of(context).push(CupertinoPageRoute(
+                builder: (context) => TeacherChartsScreen()));
           },
           child: Container(
             decoration: BoxDecoration(

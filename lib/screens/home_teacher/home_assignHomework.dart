@@ -40,7 +40,7 @@ class _AssignHomeworkScreenState extends State<AssignHomeworkScreen> {
       ),
       body: Container(
         child: ListView.separated(
-          itemCount: 9,
+          itemCount: 2,
           itemBuilder: (BuildContext context, int a) {
             return getRow(a);
           },
@@ -55,11 +55,11 @@ class _AssignHomeworkScreenState extends State<AssignHomeworkScreen> {
   }
 
   Widget getRow(int a) {
-    if (a == 8) {
+    if (a == 1) {
       return Container(
         //padding: EdgeInsets.fromLTRB(
         //31.w, a > 8 ? 480.h - 512.w : 480.h - a * 64.w, 31.w, 0),
-        padding: EdgeInsets.fromLTRB(31.w, 480.h - (a - 1) * 64.w, 31.w, 0),
+        padding: EdgeInsets.fromLTRB(31.w, 420.h - (a - 1) * 64.w, 31.w, 0),
         child: Container(
           //color: Colors.red,
           width: 313.w,

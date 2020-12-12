@@ -53,7 +53,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/angz
 	android:label
 		ADDED from /Users/angzeng/Cloudgrain_project/Cloudgrain_teacher/android/app/src/main/AndroidManifest.xml:10:9-33
 	android:icon
-		ADDED from /Users/angzeng/Cloudgrain_project/Cloudgrain_teacher/android/app/src/main/AndroidManifest.xml:11:9-43
+		ADDED from /Users/angzeng/Cloudgrain_project/Cloudgrain_teacher/android/app/src/main/AndroidManifest.xml:11:9-48
 	android:name
 		ADDED from /Users/angzeng/Cloudgrain_project/Cloudgrain_teacher/android/app/src/main/AndroidManifest.xml:9:9-57
 activity#com.example.Cloudgrain_teacher.MainActivity

@@ -25,7 +25,7 @@
         android:name="io.flutter.app.FlutterApplication"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_logo"
         android:label="晚辅导(教师版)" >
         <activity
             android:name="com.example.Cloudgrain_teacher.MainActivity"

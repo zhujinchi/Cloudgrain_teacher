@@ -34,8 +34,8 @@
 26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 26-->[androidx.core:core:1.1.0] /Users/angzeng/.gradle/caches/transforms-2/files-2.1/6b399c2363bb098ebde1725d903cbda0/core-1.1.0/AndroidManifest.xml:24:18-86
 27        android:debuggable="true"
-28        android:icon="@mipmap/ic_launcher"
-28-->/Users/angzeng/Cloudgrain_project/Cloudgrain_teacher/android/app/src/main/AndroidManifest.xml:11:9-43
+28        android:icon="@mipmap/ic_launcher_logo"
+28-->/Users/angzeng/Cloudgrain_project/Cloudgrain_teacher/android/app/src/main/AndroidManifest.xml:11:9-48
 29        android:label="晚辅导(教师版)" >
 29-->/Users/angzeng/Cloudgrain_project/Cloudgrain_teacher/android/app/src/main/AndroidManifest.xml:10:9-33
 30        <activity
